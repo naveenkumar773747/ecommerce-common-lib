@@ -23,14 +23,14 @@ public class Cart {
     private List<CartItem> items = new ArrayList<>();
 
     public void addOrUpdateItem(CartItem newItem) {
-        Optional<CartItem> existing = items.stream()
+        items.stream()
                 .filter(item -> item.getProductId().equals(newItem.getProductId()))
-                .findFirst();
-        if (existing.isPresent()) {
-            existing.get().setQuantity(existing.get().getQuantity() + newItem.getQuantity());
-        } else {
-            items.add(newItem);
-        }
+                .findFirst()
+                .ifPresentOrElse(cartItem ->
+                    cartItem.setQuantity(cartItem.getQuantity()+newItem.getQuantity()),
+                    ()-> items.add(newItem)
+                );
+
     }
 
     public void updateItem(String productId, int quantity) {

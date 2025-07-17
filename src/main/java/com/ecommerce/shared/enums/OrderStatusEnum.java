@@ -1,6 +1,6 @@
 package com.ecommerce.shared.enums;
 
-public enum OrderStatus {
+public enum OrderStatusEnum {
     PENDING,
     CONFIRMED,
     FAILED
