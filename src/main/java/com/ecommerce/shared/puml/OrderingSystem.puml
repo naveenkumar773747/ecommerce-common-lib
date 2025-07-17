@@ -1,0 +1,49 @@
+@startuml
+
+class Order {
+  - String orderId
+  - String userId
+  - List<CartItem> items
+  - double totalAmount
+  - String status
+  - LocalDateTime createdAt
+  - DeliveryInfo deliveryInfo
+  - BillingInfo billingInfo
+}
+
+class Cart {
+  - String id
+  - String userId
+  - List<CartItem> items
+}
+
+class CartItem {
+  - String productId
+  - String productName
+  - int quantity
+  - double pricePerUnit
+}
+
+class DeliveryInfo {
+  - String addressLine1
+  - String addressLine2
+  - String city
+  - String state
+  - String pincode
+  - String contactNumber
+}
+
+class BillingInfo {
+  - String billingName
+  - String billingEmail
+  - String billingPhone
+  - String billingAddress
+  - String paymentMethod
+}
+
+Order --> CartItem
+Cart --> CartItem
+Order --> DeliveryInfo
+Order --> BillingInfo
+
+@enduml

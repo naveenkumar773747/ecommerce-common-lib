@@ -1,0 +1,8 @@
+com\ecommerce\shared\enums\OrderStatus.class
+com\ecommerce\shared\model\CartItem.class
+com\ecommerce\shared\model\UserInfo.class
+com\ecommerce\shared\model\Cart.class
+com\ecommerce\shared\model\DeliveryInfo.class
+com\ecommerce\shared\events\OrderPlacedEvent.class
+com\ecommerce\shared\model\BillingInfo.class
+com\ecommerce\shared\model\Order.class
