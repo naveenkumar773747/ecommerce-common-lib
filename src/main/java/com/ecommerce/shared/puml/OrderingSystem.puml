@@ -1,5 +1,12 @@
 @startuml
 
+class UserInfo {
+ - String userId
+ - String name
+ - String email
+ - List<DeliveryInfo> savedAddresses
+}
+
 class Order {
   - String orderId
   - String userId
@@ -9,6 +16,7 @@ class Order {
   - LocalDateTime createdAt
   - DeliveryInfo deliveryInfo
   - BillingInfo billingInfo
+  - DeliveryTypeEnum deliveryType
 }
 
 class Cart {
@@ -38,9 +46,10 @@ class BillingInfo {
   - String billingEmail
   - String billingPhone
   - String billingAddress
-  - String paymentMethod
+  - PaymentTypeEnum paymentMethod
 }
 
+UserInfo --> DeliveryInfo
 Order --> CartItem
 Cart --> CartItem
 Order --> DeliveryInfo

@@ -4,5 +4,6 @@ public enum PaymentTypeEnum {
     CREDIT_CARD,
     DEBIT_CARD,
     UPI,
-    CASH
+    CASH,
+    WALLET
 }

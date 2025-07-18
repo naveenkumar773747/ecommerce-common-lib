@@ -1,7 +1,9 @@
 package com.ecommerce.shared.enums;
 
 public enum OrderStatusEnum {
-    PENDING,
+    CREATED,
+    PLACED,
     CONFIRMED,
-    FAILED
+    FAILED,
+    COMPLETED
 }
