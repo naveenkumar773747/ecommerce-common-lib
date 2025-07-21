@@ -1,0 +1,69 @@
+@startuml
+
+title Kafka Events
+
+footer Generated on: 2025-07-21 at 18:06 IST
+
+class OrderEvent {
+    -  String orderId
+    -  String userId
+    -  List<CartItem> items
+    -  double totalAmount
+    -  DeliveryInfo deliveryInfo
+    -  BillingInfo billingInfo
+    -  DeliveryTypeEnum deliveryType
+    -  OrderStatusEnum status
+    -  String createdDateTime
+}
+
+class DeliveryEvent {
+    -  String orderId
+    -  String userId
+    -  DeliveryInfo deliveryInfo
+    -  BillingInfo billingInfo
+    -  OrderStatusEnum status
+    -  String createdDateTime
+}
+
+class PaymentEvent {
+    -  String orderId
+    -  String userId
+    -  double totalAmount
+    -  PaymentTypeEnum paymentTypeEnum
+    -  OrderStatusEnum status
+    -  String createdDateTime
+}
+
+class DeliveryInfo {
+  - String addressLine1
+  - String addressLine2
+  - String city
+  - String state
+  - String pincode
+  - String contactNumber
+}
+
+class BillingInfo {
+  - String billingName
+  - String billingEmail
+  - String billingPhone
+  - String billingAddress
+  - PaymentTypeEnum paymentMethod
+}
+
+class CartItem {
+  - String productId
+  - String productName
+  - int quantity
+  - double pricePerUnit
+}
+
+OrderEvent --> DeliveryInfo
+OrderEvent --> BillingInfo
+OrderEvent --> CartItem
+DeliveryEvent --> DeliveryInfo
+DeliveryEvent --> BillingInfo
+
+
+
+@enduml

@@ -1,5 +1,9 @@
 @startuml
 
+title Ordering System Entities
+
+footer Generated on: 2025-07-21 at 18:06 IST
+
 class UserInfo {
  - String userId
  - String name
