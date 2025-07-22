@@ -8,5 +8,4 @@ public class CartItem {
     private String productName;
     private int quantity;
     private double pricePerUnit;
-    private double totalPrice;
 }

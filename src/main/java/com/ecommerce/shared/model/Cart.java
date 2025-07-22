@@ -8,7 +8,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Document(collection = "carts")
 @Data
@@ -22,13 +21,15 @@ public class Cart {
 
     private List<CartItem> items = new ArrayList<>();
 
+    private double totalCartAmount;
+
     public void addOrUpdateItem(CartItem newItem) {
         items.stream()
                 .filter(item -> item.getProductId().equals(newItem.getProductId()))
                 .findFirst()
                 .ifPresentOrElse(cartItem ->
-                    cartItem.setQuantity(cartItem.getQuantity()+newItem.getQuantity()),
-                    ()-> items.add(newItem)
+                                cartItem.setQuantity(cartItem.getQuantity() + newItem.getQuantity()),
+                        () -> items.add(newItem)
                 );
 
     }
@@ -48,5 +49,9 @@ public class Cart {
         return items.stream()
                 .mapToDouble(i -> i.getPricePerUnit() * i.getQuantity())
                 .sum();
+    }
+
+    public double getTotalCartAmount() {
+        return this.calculateTotal();
     }
 }
