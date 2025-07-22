@@ -1,5 +1,6 @@
 package com.ecommerce.shared.events;
 
+import com.ecommerce.shared.enums.DeliveryTypeEnum;
 import com.ecommerce.shared.enums.OrderStatusEnum;
 import com.ecommerce.shared.model.BillingInfo;
 import com.ecommerce.shared.model.DeliveryInfo;
@@ -11,6 +12,7 @@ public class DeliveryEvent {
     private String userId;
     private DeliveryInfo deliveryInfo;
     private BillingInfo billingInfo;
+    private DeliveryTypeEnum deliveryTypeEnum;
     private OrderStatusEnum status;
     private String createdDateTime;
 }
