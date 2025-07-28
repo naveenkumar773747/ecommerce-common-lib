@@ -19,7 +19,7 @@ public class Order {
     private double totalAmount;
     private DeliveryInfo deliveryInfo;
     private BillingInfo billingInfo;
-    private DeliveryTypeEnum deliveryType;
+    private DeliveryTypeEnum deliveryTypeEnum;
     private OrderStatusEnum status;
     private String createdDateTime;
 }

@@ -1,17 +1,15 @@
 package com.ecommerce.shared.events;
 
-import com.ecommerce.shared.enums.DeliveryTypeEnum;
 import com.ecommerce.shared.enums.OrderStatusEnum;
-import com.ecommerce.shared.enums.PaymentTypeEnum;
 import lombok.Data;
 
 @Data
-public class PaymentEvent {
+public class NotificationEvent {
     private String orderId;
     private String userId;
+    private String billingName;
+    private String billingEmail;
     private double totalAmount;
-    private PaymentTypeEnum paymentTypeEnum;
     private OrderStatusEnum status;
-    private DeliveryTypeEnum deliveryTypeEnum;
     private String createdDateTime;
 }

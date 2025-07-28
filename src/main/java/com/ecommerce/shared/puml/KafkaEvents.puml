@@ -16,6 +16,16 @@ class OrderEvent {
     -  String createdDateTime
 }
 
+class NotificationEvent {
+    - String orderId
+    - String userId
+    - String billingName
+    - String billingEmail
+    - double totalAmount
+    - OrderStatusEnum status
+    - String createdDateTime
+}
+
 class DeliveryEvent {
     -  String orderId
     -  String userId
